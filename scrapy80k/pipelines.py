@@ -65,8 +65,8 @@ class WooyunSaveToLocalPipeline(object):
         #deal the img
         for img in item['images']:
             #处理部份图片存放于http://www.wooyun.org时，使用/upload/..形式的路径
-            if img['url'].startswith('http://192.168.88.247'):
-                img['url'] = img['url'].replace('http://192.168.88.247','')
+            if img['url'].startswith('https://images-bugs.shuimugan.com/'):
+                img['url'] = img['url'].replace('https://images-bugs.shuimugan.com/','')
             item['html'] = re.sub('<img src=[\'\"]%s[\'\"]'%img['url'],'<img src=\'%s\''%img['path'],item['html'])
         #deal css
         item['html'] = re.sub(r'<link href=\"/css/style\.css','<link href=\"css/style.css',item['html'])

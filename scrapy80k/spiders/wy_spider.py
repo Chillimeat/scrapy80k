@@ -91,9 +91,9 @@ class WYSpider(scrapy.Spider):
             image_urls = response.xpath("//img[contains(@src, '/upload/')]/@src").extract()
             for u in image_urls:
                 if self.__check_ingnored_image(u):
-                    continue
+                    continuel
                 if u.startswith('/'):
-                    u = 'http://www.wooyun.org' + u
+                    u = 'https://images-bugs.shuimugan.com/' + u + '.webp'
                 item['image_urls'].append(u)
         return item    
         
